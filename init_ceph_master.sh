@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MON_ID=$(hostname)
-IP=10.0.2.$(hostname)
+IP=$(hostname --ip-address)
 systemctl stop ceph-mon@$MON_ID
 systemctl stop ceph-mgr@$MON_ID
 cp ceph.conf /etc/ceph/ceph.conf
